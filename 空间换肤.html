@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>空间换肤</title>
+		<style type="text/css">
+			body{
+				background: url(images/DSC_0099.jpg);
+				background-size: cover;
+				margin: 0;
+			}
+			#box{
+				width: 100%;
+				height: 200px;
+				background: rgba(0,0,0,.6);
+			}
+			#box ul{
+				margin:-16px 0 ;
+			}
+			#box ul li {
+				float: left;
+				margin: 50px 0 0 100px;
+				border: 1px solid #fff;
+				list-style-type:none;
+			}
+			img{
+				display: block;
+			}
+			#btn{
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 50px;
+				height: 50px;
+				background-image: url(images/upseek.png);
+			}
+			#btn:hover{
+				background-position: 0 -64px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li bigSrc="images/653.jpg"><!--/*bigSrc自定义属性*/-->
+					<img src="images/653.jpg" width="160" height="100" alt="图片说明"/>
+				</li>
+				<li  bigSrc="images/1493918642643.jpg">
+					<img src="images/1493918642643.jpg" width="160" height="100" alt="图片说明"/>
+				</li>
+				<li  bigSrc="images/IMG_3675.JPG">
+					<img src="images/IMG_3675.JPG" width="160" height="100" alt="图片说明"/>
+				</li>
+				<li  bigSrc="images/img-bf46b9bda96857f5cfbe5aaa0436b95e-恢复的.jpg">
+					<img src="images/img-bf46b9bda96857f5cfbe5aaa0436b95e-恢复的.jpg" width="160" height="100" alt="图片说明"/>
+				</li>
+				<li  bigSrc="images/10-10.jpg">
+					<img src="images/10-10.jpg" width="160" height="100" alt="图片说明"/>
+				</li>
+			</ul>
+		</div>
+		<div id="btn"></div>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.snow.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('#btn').click(function(){
+				$('#box').slideToggle();
+			});
+			$.fn.snow();
+			$('#box ul li').click(function(){
+			var src=$(this).attr('bigSrc');
+				$('body').css({
+				'background':'url('+src+')',
+				'background-size':'cover'	
+				});
+			});
+		</script>
+	</body>
+</html>
