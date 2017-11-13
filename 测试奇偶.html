@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+		<title>判断奇偶</title>
+
+</head>
+<body>
+
+<Script language="JavaScript" type="text/javascript">
+var num = prompt("请输入一个数字","");
+function fun(num){
+var a = parseInt(num);
+switch(a%2){
+case 0:
+document.write("是偶数");
+break;
+case 1:
+document.write("是奇数");
+break;
+default:
+alert("不是数字，请重新输入");
+var num = prompt("请输入一个数字","");
+fun(num);
+break;
+}
+}
+fun(num);
+</Script>
+</body>
+</html>
+
+ 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>判断奇偶</title>
+	</head>
+	<body>
+		<input type="text" name="" id="tel"  placeholder="请输入数字判断奇偶数"/>
+		<input type="button" name="but" id="but" value="判断" onclick="check()"/>
+		<script type="text/javascript">
+			var tel=document.getElementById('tel');
+			var num=tel.value;
+		function check(){
+			if (tel.value==0){
+				alert('非奇偶数')
+			}else if (tel.value%2) {
+				alert(tel.value+'是奇数')
+			}else if (tel.value){
+				alert('是偶数')
+			};
+		};
+		</script>
+	</body>
+</html>

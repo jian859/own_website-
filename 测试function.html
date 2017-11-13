@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>function</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*var arr=new Array();
+		arr.push('贝贝');
+		arr.push('宝宝');
+		arr.push(1);
+		var a=arr.pop();
+		console.log(a);
+		alert('这个数组的长度是：'+arr.length);*/
+		/*var arr=['love','顾念','见到你','假如','是呀'];
+		var Array=['one','two','three']
+		var newstr=arr.concat(Array);
+		console.log(newstr);*/
+		
+		
+		function deldub(arr){
+			for(var i=0;i<arr.length;i++){
+				//循环arr的每一个元素；arr[0]
+				for(var j=i+1;j<arr.length;j++){
+					//循环的arr的第二个；arr[1]
+					if (arr[i]==arr[j]) {
+						//判断arr[0]==arr[1]
+						arr.splice(j,1);
+						//如果等于删除
+						j--;
+					};
+				};
+				return arr;
+			}
+			
+		};
+//		console.log(deldub(newarr));
+		
+		
+		function sort1(arr,char1){
+			var te=0;
+			for (var i=0;i<arr.length;i++) {
+				for(var j=i+1;j<arr.length;i++){
+					if(eval(arr[i]+""+char1+""+arr[j])){
+						//"arr[0]   ">"         arr[1]" 假设第一个大
+						te=arr[j];
+						//te就等于第一个数（4）
+						arr[j]=arr[i];
+						//交换值 4=2
+						arr[i]=te;
+						
+					}
+				}
+			}
+			return arr;
+		};
+		var newarr1=[2,2,3,5,6,9,9,6,544,14,2];
+		console.log(sort1(newarr1,'+'))
+		var afu="alert('你好漂亮')";
+		eval(afu);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试</title>
+	</head>
+	<body>
+		<p>参数1</p>
+		<input type="text" id="nub1"  />
+		<p>参数2</p>
+		<input type="text" id="nub2"  />
+		<br />
+		<input type="button" name="" id="" value="点我" onclick="sum()"/>
+		<script type="text/javascript">
+			//
+			function sum() {
+				//声明一个obj1的变量    是页面上通过id 获取到的节点；
+				//obj1这个变量 等于是你页面上id为nub1的节点1（元素）；
+	            var obj1 = document.getElementById("nub1");
+	            var obj2 = document.getElementById("nub2");
+                //val1=obj1这个节点 的 值；
+	            var val1 = obj1.value;
+	            var val2 = obj2.value;
+	            //将获取到的值转换为数字类型
+	            var nubva1=parseInt(val1);
+	            var nubva2=parseInt(val2);
+	            var sumab = nubva1 + nubva2;
+	            //计算
+	            alert(sumab);
+	           
+            };
+            
+		</script>
+	</body>
+</html>

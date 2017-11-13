@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>雪花飘落3Dlove</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				background: #29BDE0;
+			}
+			
+			.heart3d {
+				position: relative;
+				left: 0;
+				top: 100%;
+				width: 150px;
+				height: 210px;
+				margin: 100px auto;
+				transform-style:preserve-3d ;
+				animation: rot 10s linear infinite;
+			}
+			@keyframes rot{
+				from{
+					transform: rotateX(0deg) rotateY(0deg);
+				}
+				to{
+					transform: rotateX(360deg) rotateY(360deg);
+				}
+			}
+			.heart {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 200px;
+				height: 260px;
+				border: solid 2px red;
+				border-radius: 50% 50% 0/40% 50% 0;
+				border-left: 0;
+				border-bottom: 0;
+				margin: 100px auto;
+				/*transform: rotateZ(45deg);*/
+			}
+			.cube{
+				position: relative;
+				width: 150px;
+				height: 150px;
+				transform-style:preserve-3d ;
+				transform: translateX(28px) translateY(155px) translateZ(70px);
+			}
+			.cube div{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 150px;
+				height: 150px;
+				border: 2px solid #29BDE0;
+			}
+			.cube div:nth-child(1){
+				top: 0px;
+				transform-origin:bottom;/*旋转基点*/
+				transform: rotateX(90deg);
+			}
+		    .cube div:nth-child(2){
+				top: 0px;
+				transform-origin:top;/*旋转基点*/
+				transform: rotateX(-90deg);
+			}
+			.cube div:nth-child(3){
+				left: 0px;
+				transform-origin:right;/*旋转基点*/
+				transform: rotateY(-90deg);
+			}
+			.cube div:nth-child(4){
+				left: 0px;
+				transform-origin:left;/*旋转基点*/
+				transform: rotateY(90deg);
+			}
+			.cube div:nth-child(5){
+				
+			}
+			.cube div:nth-child(6){
+				transform: translateZ(-50px);
+			}
+			
+			.cube div img{
+				width: 150px;
+				height: 150px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="heart3d">
+			<div class="cube">
+				<div><img src="images/1 (85).jpg" /></div>
+				<div><img src="images/653.jpg" /></div>
+				<div><img src="images/img-bf46b9bda96857f5cfbe5aaa0436b95e-恢复的.jpg" /></div>
+				<div><img src="images/IMG_3675.JPG" /></div>
+				<div><img src="images/1 (15).jpg"/></div>
+				<div><img src="images/DSC_0099.jpg" /></div>
+			</div>
+		</div>
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery.snow.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var heart3d = document.getElementsByClassName('heart3d')[0];
+			for(var i = 0; i < 36; i++) {
+				//创建一个元素
+				var oDiv = document.createElement("div");
+				oDiv.className = "heart";
+				oDiv.style.transform = "rotateY(" + i * 10 + "deg) rotate(45deg) translateX(30px)"
+				heart3d.appendChild(oDiv);
+
+			};
+			$.fn.snow();
+		</script>
+	</body>
+
+</html>
