@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>旅游日历</title>
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#box{
+				width: 1200px;
+				margin: auto;
+			}
+			li{
+				list-style: none;
+			}
+			#btnUl{
+				text-align: center;
+			}
+			#btnUl>li{
+				width: 150px;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+				display: inline-block;
+				border: solid 1px #00CCFF;
+				border-radius: 3px;
+				color: #00CCFF;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				cursor: pointer;
+				font-weight: 600;
+			}
+			#btnUl>li:active{
+				background: #00CCFF;
+				color: #fff;
+			}
+			#btnUl>.act{
+				background: #00CCFF;
+				color: #fff !important;
+			}
+			#imgBox{
+				width:100%;
+				text-align: center;
+			}
+			#imgBox>li>img{
+				height: 570px;
+				border-radius:5px;
+			}
+			#imgBox>li{
+				display: none;
+			}
+			#imgBox>li:first-child{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+        <div id="box">
+        	<ul id="btnUl">
+        		<li class="act">西安交大</li>
+        		<li >西安</li>
+        		<li>五一募捐群照</li>
+        		<li>五一募捐</li>
+        		<li>我们毕业啦！</li>
+        		<li>我们可爱的部友！</li>
+        	</ul>
+        	<ul id="imgBox">
+        		<li><img src="images/images/2016 6月 西安IMG_4329.JPG"/></li>
+        		<li><img src="images/images/2016 6月 西安IMG_4238.JPG"/></li>
+        		<li><img src="images/images/1 (68).jpg"/></li>
+        		<li><img src="images/images/1 (85).jpg"/></li>
+        		<li><img src="images/images/2016 6月 西安IMG_3677.JPG"/></li>
+        		<li><img src="images/images/1 (14).jpg"/></li>
+        	</ul>
+        </div>
+		<script>
+			$("#btnUl>li").click(function(){
+				var ind=$(this).index();
+				$(this).siblings().removeClass("act");
+				$(this).addClass("act");
+				$("#imgBox>li").css({
+					"display":"none"
+				});
+				$("#imgBox>li").eq(ind).css({
+					"display":"block"
+				});
+			});
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>首页轮播图</title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#box{
+				position: relative;
+				width: 760px; 
+				height: 300px;
+				background: #00ccff;
+				margin: 50px auto;
+			}
+			.pic{
+				position: relative;
+				width: inherit;
+				height: inherit;
+			}
+			.pic-itm{
+				position: absolute;
+				width: inherit;
+				height: inherit;
+			}
+			.pic-itm:nth-child(1){
+				background-image: url(../images/bg1.jpg);
+			}
+			.pic-itm:nth-child(2){
+				background-image: url(../images/bg2.jpg);
+			}
+			.pic-itm:nth-child(3){
+				background-image: url(../images/bg3.jpg);
+			}
+			.pic-itm:nth-child(4){
+				background-image: url(../images/bg4.jpg);
+			}
+			.pic-itm:nth-child(5){
+				background-image: url(../images/bg5.jpg);
+			}
+			.pic-itm img{
+				position: absolute;
+				top: 0px;
+			}
+			.btn{
+				position: absolute;
+				right: 20px;
+				bottom: 10px;
+				width: 100px;
+				height: 14px;
+			}
+			.btn ul{
+				clear: both;
+				margin-top: 0px;
+                padding-left: 0px;
+			}
+			.btn ul li{
+				float: left;
+				list-style-type:none;
+				width: 14px;
+				height: 14px;
+				border: solid 1px #fff;
+			    margin-right: 4px;
+			}
+			.btn ul li.hover{
+				background: #ffcc00;
+				border:1px solid #FFCC00;
+			}
+		</style>
+	</head>
+	<body>
+		<!--页面是主体内容-->
+		<div id="box">
+			<div class="pic">
+				<div class="pic-itm">
+					<img src="../images/text1.png"/>
+					<img src="../images/con1.png"/>
+				</div>
+				<div class="pic-itm">
+					<img src="../images/text2.png"/>
+					<img src="../images/con2.png"/>
+				</div>
+				<div class="pic-itm">
+					<img src="../images/text3.png"/>
+					<img src="../images/con3.png"/>
+				</div>
+				<div class="pic-itm">
+					<img src="../images/text4.png"/>
+					<img src="../images/con4.png"/>
+				</div>
+				<div class="pic-itm">
+					<img src="../images/text5.png"/>
+					<img src="../images/con5.png"/>
+				</div>
+			</div>
+			<div class="btn">
+				<ul>
+					<li class="hover"></li>
+					<li ></li>
+					<li ></li>
+					<li ></li>
+					<li ></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>
