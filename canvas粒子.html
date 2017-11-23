@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas粒子</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				overflow: hidden;
+				background: #222222;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="" width="1000" height="800"></canvas>
+
+		<script type="text/javascript">
+			//圆周算法：
+			//已知半径,角度;求X坐标与Y坐标.
+			//x=cos(theta)*force;
+			//y=sin(theta)*force;
+			var canvas = document.querySelector("canvas");
+			var ctx = canvas.getContext('2d');
+			var COLORs = ['#69d2e7', '#a7dbdb', '#e0e4cc', '#f38630', '#fa6900', '#ff4e50', '#f9d423']
+			var wW = window.innerWidth,
+				wH = window.innerHeight;
+
+			var x = 0,
+				y = 100;
+			var particles = [];
+			var timer = null;
+			init();
+
+			function init() {
+
+				canvas.width = wW;
+				canvas.height = wH;
+				render();
+			}
+
+			function Particle(opt) {
+				this.init(opt);
+
+			};
+			Particle.prototype = {
+				init: function(opt) {
+					this.x = opt.x || 0;
+					this.y = opt.y || 0;
+					this.radius = random(20,40);
+					this.color = random(COLORs);
+					this.force=random(2,8);//随机扩散半径
+					this.theta=random(0,Math.PI*2);
+					
+					this.vx=Math.cos(this.theta)*this.force;
+					this.vy=Math.sin(this.theta)*this.force;
+				},
+				upData: function() {
+					//粒子运动轨迹
+					this.x+= this.vx;
+					this.y+= this.vy;
+					
+					//沿着原先家督向外移动
+					this.vx+= Math.cos(this.theta)*.1;
+					this.vy+= Math.sin(this.theta)*.1;
+					//摩擦系数
+					this.vx*=.92;
+					this.vy*=.92;
+					//变小
+					this.radius*=.92;
+				},
+				draw:function(ctx) {
+					ctx.beginPath();
+					ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+					ctx.fillStyle = this.color;
+					//叠加透明色
+					ctx.globalCompositeOperation='lighter';
+					ctx.fill();
+
+				}
+			}
+
+			function render() {
+				ctx.clearRect(0, 0, wW, wH); //清空画布
+				for(var i = 0, len = particles.length; i < len; i++) {
+					particles[i].draw(ctx);
+					particles[i].upData();
+
+				}
+				requestAnimationFrame(render);
+			}
+
+			//鼠标移动事件
+			canvas.onmousemove = function(e) {
+				var eX = e.pageX;
+				var eY = e.pageY;
+				for(var i=0;i<random(1,10);i++){
+					spawn(eX, eY);
+				};
+				
+			}
+			//孵化器 专门用来实例化粒子对象
+			function spawn(eX, eY) {
+				var particle = new Particle({
+					x: eX,
+					y: eY
+				});
+				particles.push(particle);
+				if (particles.length>=800) {
+					particles.shift();
+				}
+				particle.draw(ctx);
+				
+			}
+			//随机数封装 Math.random()
+			function random(min, max) {
+				//又要处理数组，又要处理数字 
+				if(min.sort) {
+					//如果是数组  如果它有sort，那他就是数组
+					return min[~~(Math.random() * min.length)];
+				} else {
+					//算法取整 ~~
+					return ~~(min + Math.random() * (max - min));
+				}
+
+			}
+
+			//          function isArray(){
+			//          	return Object.prototype.toString.call(obj)==='[object Array]';
+			//          }
+		</script>
+
+	</body>
+
+</html>

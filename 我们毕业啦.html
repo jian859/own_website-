@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>旅游日历</title>
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#box {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			#btnUl {
+				text-align: center;
+			}
+			
+			#btnUl>li {
+				width: 150px;
+				height: 35px;
+				margin-top: 20px;
+				line-height: 35px;
+				text-align: center;
+				display: inline-block;
+				border: solid 1px #00CCFF;
+				border-radius: 3px;
+				color: #00CCFF;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				cursor: pointer;
+				font-weight: 600;
+			}
+			
+			#btnUl>li:active {
+				background: #00CCFF;
+				color: #fff;
+			}
+			
+			#btnUl>.act {
+				background: #00CCFF;
+				color: #fff !important;
+			}
+			
+			#imgBox {
+				width: 100%;
+				text-align: center;
+			}
+			
+			#imgBox>ul>li>img {
+				height: 570px;
+				border-radius: 5px;
+			}
+			
+			#imgBox>.Szhen>li img {
+				display: none;
+			}
+			
+			img {
+				display: none;
+			}
+			
+			#imgBox>.Szhen>li>img:first-child {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 style="text-align: center;" id="blink">我的大学时光！</h1>
+		<div id="box">
+
+			<ul id="btnUl">
+				<li>深圳</li>
+				<li class="act">西安</li>
+				<li>苏州</li>
+				<li>杭州</li>
+				<li>襄阳</li>
+				<li>北京</li>
+				<li>五一募捐</li>
+				<li>敬老院献爱心</li>
+				<li>社旗</li>
+				<li>太行山</li>
+				<li>学生会</li>
+				<li>16级新生</li>
+				<li>我们的宿舍</li>
+				<li>五朵山</li>
+
+			</ul>
+			<div id="imgBox">
+				<ul id="Szhen">
+					<li><img src="images/psb (3).jpg" /></li>
+					<li><img src="images/psb (2).jpg" /></li>
+					<li><img src="images/psb (4).jpg" /></li>
+					<li><img src="images/psb (5).jpg" /></li>
+					<li><img src="images/psb.jpg" /></li>
+				</ul>
+				<ul id="XA">
+					<li><img src="images/images/2016 6月 西安IMG_4329.JPG" /></li>
+					<li><img src="images/images/2016 6月 西安IMG_4238.JPG" /></li>
+					<li><img src="images/IMG_4670.JPG" /></li>
+					<li><img src="images/psb (9).jpg" /></li>
+					<li><img src="images/psb (9).jpg" /></li>
+				</ul>
+				<ul id="SZ">
+					<li><img src="images/psb (51).jpg" /></li>
+					<li><img src="images/psb (47).jpg" /></li>
+					<li><img src="images/psb (49).jpg" /></li>
+					<li><img src="images/psb (50).jpg" /></li>
+					<li><img src="images/psb (46).jpg" /></li>
+				</ul>
+				<ul id="Hz">
+					<li><img src="images/psb (22).jpg" /></li>
+					<li><img src="images/psb (21).jpg" /></li>
+					<li><img src="images/psb (23).jpg" /></li>
+					<li><img src="images/psb (25).jpg" /></li>
+					<li><img src="images/psb (27).jpg" /></li>
+				</ul>
+				<ul id="XY">
+					<li><img src="images/psb (24).jpg" /></li>
+					<li><img src="images/psb (30).jpg" /></li>
+					<li><img src="images/psb (28).jpg" /></li>
+					<li><img src="images/psb (26).jpg" /></li>
+					<li><img src="images/psb (29).jpg" /></li>
+				</ul>
+				<ul id="Bj">
+					<li><img src="images/psb (13).jpg" /></li>
+					<li><img src="images/psb (11).jpg" /></li>
+					<li><img src="images/psb (14).jpg" /></li>
+					<li><img src="images/psb (15).jpg" /></li>
+					<li><img src="images/psb (16).jpg" /></li>
+
+				</ul>
+				<ul id="Wy">
+					<li><img src="images/images/1 (68).jpg" /></li>
+					<li><img src="images/images/1 (85).jpg" /></li>
+					<li><img src="images/1U7A4431.JPG" /></li>
+					<li><img src="images/1U7A4434.JPG" /></li>
+					<li><img src="images/1U7A4440.JPG" /></li>
+				</ul>
+				<ul id="Jl">
+					<li><img src="images/1 (7).jpg" /></li>
+					<li><img src="images/653.jpg" /></li>
+					<li><img src="images/1 (6).jpg" /></li>
+					<li><img src="images/_MG_6826.JPG" width="1000" height="620" /></li>
+					<li><img src="images/_MG_6770.JPG" /></li>
+				</ul>
+				<ul id="SQ">
+					<li><img src="images/psb (43).jpg" /></li>
+					<li><img src="images/psb (39).jpg" /></li>
+					<li><img src="images/psb (42).jpg" /></li>
+					<li><img src="images/psb (40).jpg" /></li>
+					<li><img src="images/psb (41).jpg" /></li>
+				</ul>
+				<ul id="Th">
+					<li><img src="images/1 (26).jpg" /></li>
+					<li><img src="images/psb (36).jpg" /></li>
+					<li><img src="images/psb (37).jpg" /></li>
+					<li><img src="images/psb (38).jpg" /></li>
+					<li><img src="images/psb (45).jpg" /></li>
+				</ul>
+				<ul id="Xs">
+					<li><img src="images/1 (14).jpg" /></li>
+					<li><img src="images/1 (15).jpg" /></li>
+					<li><img src="images/1 (9).jpg" /></li>
+					<li><img src="images/1 (16).jpg" /></li>
+					<li><img src="1 (19).jpg" /></li>
+				</ul>
+				<ul id="Xins">
+					<li><img src="images/psb (32).jpg" /></li>
+					<li><img src="images/psb (33).jpg" /></li>
+					<li><img src="images/psb (34).jpg" /></li>
+					<li><img src="images/psb (35).jpg" /></li>
+					<li><img src="images/psb (31).jpg" /></li>
+				</ul>
+				<ul id="Ss">
+					<li><img src="images/IMG_3675.JPG" /></li>
+					<li><img src="images/2016 6月 西安IMG_3677.JPG" /></li>
+					<li><img src="images/psb (20).jpg" /></li>
+					<li><img src="images/psb (18).jpg" /></li>
+					<li><img src="images/psb (19).jpg" /></li>
+				</ul>
+				<ul id="Wds">
+					<li><img src="images/1 (38).jpg" /></li>
+					<li><img src="images/1 (41).jpg" /></li>
+					<li><img src="images/1 (53).jpg" /></li>
+					<li><img src="images/1 (52).jpg" /></li>
+					<li><img src="images/1 (40).jpg" /></li>
+				</ul>
+			</div>
+			<script>
+				//字体闪动变色
+				function changeColor() {
+					var color = "#f00|#0f0|#00f|#880|#808|#088|yellow|green|blue|gray";
+					color = color.split("|");
+					document.getElementById("blink").style.color = color[parseInt(Math.random() * color.length)];
+				};
+				//字体颜色闪动定时器
+				setInterval("changeColor()", 200);
+				//按钮变色
+				$("#btnUl>li").click(function() {
+					var ind = $(this).index();
+					$(this).siblings().removeClass("act");
+					$(this).addClass("act");
+										$("#imgBox>li").css({ "display": "none" });
+										$("#imgBox>.Szhen>li").eq(ind).css({ "display": "block" });
+				});
+				
+				
+				
+				
+				//更改图片
+				$(document).ready(function() {
+					var imgSrcIndex = 0;
+					var imgSrcs = ["a", "b", "c"];
+
+					$('#img1').click(function() {
+						imgSrcIndex = imgSrcIndex >= imgSrcs.length ? 0 : imgSrcIndex + 1;
+						$(this).attr('src', imgSrcs[imgSrcIndex]);
+					});
+
+				});
+
+				/***
+        参数说明：
+        now:当前是第几组，默认是0
+        c:总共有几组
+        d:初始化时li的个数
+        e:每组显示li个数
+        ***/
+				function btnshow(now, c, d, e) {
+					if(d <= e) { //如果初始化时li的个数小于一组要显示的数，则不显示pre和next按钮
+						a.find(".ps_next").hide();
+						a.find(".ps_pre").hide();
+					} else if(now == 0) { //初始化now=0，显示第一组，只显示next
+						a.find(".ps_next").show();
+						a.find(".ps_pre").hide();
+					} else if(now == c - 1) { //显示到最后一组，只显示pre
+						a.find(".ps_next").hide();
+						a.find(".ps_pre").show();
+					} else { //显示中间组，pre和next都需要显示
+						a.find(".ps_next").show();
+						a.find(".ps_pre").show();
+					}
+				}
+			</script>
+	</body>
+
+</html>
